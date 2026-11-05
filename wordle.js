@@ -31,11 +31,17 @@ function initialise (){
         if ("KeyA" <= e.code && "keyZ" >= e.code) {
             if (col <  width) {
                 let currTile = document.getElementById(row.toString() + "-" + col.toString())
-            if (currTile.innerText == "") {
-                currTile.innerText = e.code[3];
-                col += 1;
+                if (currTile.innerText == "") {
+                    currTile.innerText = e.code[3];
+                    col += 1;
+                }
             }
+        } else if (e.code == "Backspace") {
+            if (0 < col && col <= width) {
+                col -= 1;
             }
+            let currTile = document.getElementById(row.toString() + "-" + col.toString())
+            currTile.innerText = ""
         }
     })
 
