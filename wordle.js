@@ -19,9 +19,24 @@ function initialise (){
             let tile = document.createElement("span"); // creates <span>
             tile.id = r.toString() + "-" + c.toString();
             tile.classList.add("tile");
-            tile.innerText = "P";
+            tile.innerText = "";
             document.getElementById("board").appendChild(tile)
         }
     }
+
+    // Listen for keypress
+    document.addEventListener("keyup", (e) => {
+        if (gameOver) return;
+
+        if ("KeyA" <= e.code && "keyZ" >= e.code) {
+            if (col <  width) {
+                let currTile = document.getElementById(row.toString() + "-" + col.toString())
+            if (currTile.innerText == "") {
+                currTile.innerText = e.code[3];
+                col += 1;
+            }
+            }
+        }
+    })
 
 }
