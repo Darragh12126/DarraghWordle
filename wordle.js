@@ -5,7 +5,7 @@ let row = 0; // current attempt
 let col = 0; // current letter for that attempt
 
 let gameOver = false;
-const word = "SQUID";
+const word = "SLIME";
 
 // window.onload runs after the whole page (HTML, CSS, images, scripts) is fully loaded.
 window.onload = function(){
